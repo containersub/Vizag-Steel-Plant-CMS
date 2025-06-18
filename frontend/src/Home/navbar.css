@@ -1,0 +1,256 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Montserrat:ital,wght@0,100..900;1,100..900&family=Outfit:wght@100..900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Raleway:ital,wght@0,100..900;1,100..900&family=Roboto:ital,wght@0,100..900;1,100..900&family=Work+Sans:ital,wght@0,100..900;1,100..900&display=swap');
+:root {
+  /* Color Palette */
+  --color-primary:  #1a203c; /* Deep blue sidebar */
+  --color-bg: #ffffff; /* Main background & cards */
+  --color-success: #10b981; /* Active / success states */
+  --color-error: #ef4444; /* Error / inactive states */
+  --color-border: #e5e7eb; /* Light gray borders */
+  --color-hover: #f0f2f5; /* Lighter shade for hover effects */
+  --color-text-dark: #333333; /* Darker text for readability */
+  --color-text-light: #ffffff; /* Light text for dark backgrounds */
+  --color-accent: #007bff; /* A brighter accent color for highlights */
+
+  /* Typography */
+    --font-1:"Poppins", sans-serif;
+    --font-2: "Raleway", sans-serif;
+    --font-3:"Montserrat", sans-serif;
+    --font-4:"Roboto", sans-serif;
+    --font-5:"Outfit", sans-serif;
+    --font-6:"Work Sans", sans-serif;
+  /* Border radius */
+  --radius-sm: 0.25rem;
+  --radius-md: 0.5rem;
+  --radius-lg: 1rem;
+  --radius-full: 9999px; /* For pill-shaped elements */
+  /* Shadow for cards and panels */
+  --shadow-sm: 0 1px 2px rgba(0, 0, 0, 0.05);
+  --shadow-md: 0 4px 6px rgba(0, 0, 0, 0.1);
+  --shadow-lg: 0 10px 15px rgba(0, 0, 0, 0.15);  
+}
+  /* Navbar styles*/
+.navbar-wrapper {
+  background-color: var(--color-primary); /* Deep blue background */
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  box-shadow: var(--shadow-md); /* Subtle shadow for elevation */
+  padding: 0 20px; /* Horizontal padding for the whole wrapper */
+}
+
+.nmain {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 70px; /* Slightly increased height for better spacing */
+  width: 100%;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1); /* Subtle separator */
+}
+
+.nmain h2 {
+  font-family: var(--font-2);
+  font-weight: 500; /* Bolder font weight */
+  font-size: 26px; /* Slightly smaller for better fit */
+  color: var(--color-text-light); /* White text */
+  margin: 0; /* Remove default margin */
+}
+
+
+
+
+.nmain p span {
+  display: flex;
+  align-items: center;
+}
+
+
+
+.nnav {
+  background-color: var(--color-bg); /* White background for nav links */
+  height: 60px; /* Consistent height */
+  display: flex;
+  align-items: center; /* Vertically center nav items */
+  padding: 0 20px; /* Add horizontal padding */
+  box-shadow: var(--shadow-sm); /* Light shadow for separation */
+  border-bottom-left-radius: var(--radius-md); /* Rounded corners at the bottom */
+  border-bottom-right-radius: var(--radius-md);
+  margin-left: 0px;
+  margin-right: 0px;
+  transform: translateY(-15px); /* Lift it slightly to overlap nmain */
+  -webkit-transform: translateY(-15px);
+  -moz-transform: translateY(-15px);
+  -ms-transform: translateY(-15px);
+  -o-transform: translateY(-15px);
+}
+
+.nnav ul {
+  display: flex;
+  justify-content: space-around; /* Distribute items evenly */
+  width: 100%;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.nnav li {
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 10px 15px; /* Adjust padding for better clickable area */
+  transition: background-color 0.3s ease, color 0.3s ease, transform 0.2s ease;
+  border-radius: var(--radius-sm); /* Slightly rounded corners */
+}
+
+.nnav li:hover {
+  background-color: var(--color-hover); /* Light gray on hover */
+  transform: translateY(-2px); /* Subtle lift effect */
+}
+
+.nnav li a {
+  text-decoration: none;
+  outline: none;
+  color: var(--color-text-dark); /* Dark text color */
+  font-family: var(--font-2);
+  font-weight: 600; /* Medium font weight */
+  font-size: 16px;
+  white-space: nowrap;
+  transition: color 0.3s ease;
+}
+
+.nnav li:hover a {
+  color: var(--color-primary); /* Change link color to primary on hover */
+}
+
+/* Responsive adjustments */
+@media (max-width: 992px) {
+  .navbar-wrapper {
+    padding: 0 15px;
+  }
+  .nmain h2 {
+    font-size: 20px;
+  }
+  .nmain p {
+    font-size: 16px;
+  }
+  .nnav {
+    margin-left: 20px;
+    margin-right: 20px;
+    transform: translateY(-10px);
+  }
+  .nnav li {
+    padding: 8px 12px;
+  }
+  .nnav li a {
+    font-size: 15px;
+  }
+}
+
+@media (max-width: 768px) {
+  .navbar-wrapper {
+    height: auto; /* Allow height to adjust */
+    padding-bottom: 10px; /* Add padding at the bottom for better spacing when stacked */
+  }
+
+  .nmain {
+    flex-direction: column; /* Stack main items on small screens */
+    height: auto;
+    padding: 15px 20px; /* More vertical padding */
+    border-bottom: none; /* Remove separator when stacked */
+  }
+
+  .nmain h2 {
+    font-size: 20px;
+    margin-bottom: 10px; /* Space between title and admin */
+  }
+
+  .nmain p {
+    font-size: 16px;
+    margin-bottom: 0;
+  }
+
+  .nnav {
+    flex-wrap: wrap; /* Allow navigation items to wrap */
+    height: auto;
+    padding: 10px; /* Adjust padding */
+    justify-content: center; /* Center items when wrapped */
+    margin: 0 10px; /* Reduce horizontal margin */
+    transform: translateY(0); /* Remove lift effect */
+    border-radius: var(--radius-md); /* Ensure rounded corners on all sides */
+  }
+
+  .nnav ul {
+    flex-direction: column; /* Stack nav items vertically */
+    align-items: center; /* Center items horizontally */
+    width: 100%;
+    gap: 5px; /* Space between stacked items */
+  }
+
+  .nnav li {
+    width: 90%; /* Make list items take more width */
+    padding: 10px 15px;
+    font-size: 0.9rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .nmain h2 {
+    font-size: 18px;
+  }
+  .nmain p {
+    font-size: 14px;
+  }
+  .nnav {
+    margin: 0 5px;
+  }
+  .nnav li {
+    padding: 8px 10px;
+    font-size: 0.8rem;
+  }
+}
+.user-info {
+  display: flex;
+  align-items: center;
+  gap: 50px;
+   /* Space between avatar and text */
+}
+.user-info a{
+  text-decoration: none;
+}
+.user-info-login{
+  color: white;
+  text-decoration: none;
+  font-family: var(--font-2);
+  font-weight: 600; /* Medium font weight */
+  font-size: 16px;
+  position: relative;
+  bottom: -3px;
+  
+  
+}
+.user-info-login:hover {
+  color: #007bff; /* Highlight on hover */
+}
+.user-info p{
+  width: auto;
+  display: flex;
+  color: white;
+  position: relative;
+  right: 20px;
+  font-size: 16px;
+  font-weight: 600;
+  font-family: var(--font-2);
+}
+.user-info p span {
+  position: relative;
+  left:10px;
+  top:-6px;
+  gap: 5px; /* Space between text and icon */
+  color: white;
+  text-decoration: none;
+  font-size: 35px;
+}
+.user-info p:hover {
+   /* Change color on hover */
+  color: var(--color-accent);
+}

@@ -1,0 +1,173 @@
+/* Login.css */
+
+/* General container for the authentication pages (login/registration) */
+.auth-container {
+  width: 100vw; /* Full viewport width */
+  min-height: 100vh; /* Full viewport height */
+  display: flex; /* Use flexbox for centering */
+  justify-content: center; /* Center horizontally */
+  align-items: center; /* Center vertically */
+  background: linear-gradient(
+    to bottom,
+    #87ceeb, /* Light blue for the top */
+    #ffffff /* White for the bottom */
+  ); /* Blue to White gradient background */
+  font-family: 'Inter', sans-serif; /* Use Inter font */
+  padding: 20px; /* Add some padding for smaller screens */
+  box-sizing: border-box; /* Include padding in the element's total width and height */
+}
+
+/* Styling for the login/registration card */
+.auth-card {
+  background-color: #ffffff; /* White background */
+  padding: 40px; /* Generous padding inside the card */
+  border-radius: 12px; /* More rounded corners */
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15); /* Enhanced shadow for depth */
+  text-align: center; /* Center text content */
+  width: 100%; /* Make card responsive */
+  max-width: 400px; /* Max width for the card */
+  animation: fadeIn 0.5s ease-out; /* Simple fade-in animation */
+}
+
+/* Keyframe animation for fade-in effect */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(-20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Styling for the logo/title section */
+.auth-card h2 {
+  font-size: 1.8em; /* Larger title font size */
+  color: #333; /* Darker text color */
+  margin-bottom: 30px; /* Space below the title */
+  font-weight: 700; /* Bold font weight */
+}
+
+/* Styling for form groups (label + input) */
+.form-group {
+  margin-bottom: 25px; /* More space between form groups */
+  text-align: left; /* Align labels and inputs to the left */
+}
+
+/* Styling for labels */
+.form-group label {
+  display: block; /* Make label a block element */
+  margin-bottom: 10px; /* Space between label and input */
+  font-weight: 600; /* Semi-bold font weight */
+  color: #555; /* Medium grey color */
+  font-size: 1.05em; /* Slightly larger font size */
+}
+
+/* Styling for text and password input fields */
+.form-group input[type="email"],
+.form-group input[type="password"],
+.form-group input[type="text"] { /* Added text type for registration name field */
+  width: 100%; /* Full width of its container */
+  padding: 12px; /* More padding inside input fields */
+  border: 1px solid #ddd; /* Light grey border */
+  border-radius: 8px; /* Rounded corners for inputs */
+  font-size: 1.1em; /* Larger font size for input text */
+  box-sizing: border-box; /* Ensures padding doesn't increase total width */
+  transition: border-color 0.3s ease, box-shadow 0.3s ease; /* Smooth transition for focus effects */
+}
+
+/* Focus state for input fields */
+.form-group input[type="email"]:focus,
+.form-group input[type="password"]:focus,
+.form-group input[type="text"]:focus {
+  border-color: #4CAF50; /* Green border on focus */
+  outline: none; /* Remove default outline */
+  box-shadow: 0 0 0 4px rgba(76, 175, 80, 0.25); /* Green glow on focus */
+}
+
+/* Styling for the primary button (e.g., Login, Register) */
+.btn.primary {
+  width: 100%; /* Full width button */
+  padding: 16px; /* Generous padding */
+  background-color: #4CAF50; /* Green button */
+  color: white; /* White text */
+  border: none; /* No border */
+  border-radius: 8px; /* Rounded corners */
+  font-size: 1.2em; /* Larger font size */
+  font-weight: 700; /* Bold font weight */
+  cursor: pointer; /* Pointer cursor on hover */
+  transition: background-color 0.3s ease, transform 0.2s ease; /* Smooth transitions */
+  margin-top: 15px; /* Space above the button */
+}
+
+/* Hover effect for the primary button */
+.btn.primary:hover {
+  background-color: #45a049; /* Darker green on hover */
+  transform: translateY(-2px); /* Slight lift effect */
+}
+
+/* Active (click) effect for the primary button */
+.btn.primary:active {
+  transform: translateY(0); /* Return to original position */
+}
+
+/* Styling for error messages */
+.error-message {
+  color: #e74c3c; /* Red color for error messages */
+  margin-bottom: 20px; /* Space below the error message */
+  font-size: 0.95em; /* Slightly larger font size */
+  text-align: center; /* Center the error message */
+  background-color: #fce8e6; /* Light red background */
+  border: 1px solid #e74c3c; /* Red border */
+  border-radius: 5px; /* Rounded corners */
+  padding: 10px; /* Padding inside the error box */
+}
+
+/* Styling for links (e.g., "Don't have an account?") */
+.auth-link {
+  margin-top: 25px; /* Space above the link paragraph */
+  font-size: 1em; /* Standard font size */
+  color: #666; /* Grey text color */
+}
+
+.auth-link a {
+  color: #007bff; /* Blue link color */
+  text-decoration: none; /* No underline by default */
+  font-weight: 600; /* Semi-bold link text */
+  transition: color 0.3s ease, text-decoration 0.3s ease; /* Smooth transitions */
+}
+
+.auth-link a:hover {
+  text-decoration: underline; /* Underline on hover */
+  color: #0056b3; /* Darker blue on hover */
+}
+
+/* Responsive adjustments */
+@media (max-width: 600px) {
+  .auth-card {
+    padding: 30px 20px; /* Adjust padding for smaller screens */
+    margin: 0 15px; /* Add some margin on very small screens */
+  }
+
+  .auth-card h2 {
+    font-size: 1.8em; /* Smaller title font size */
+    margin-bottom: 20px;
+  }
+
+  .form-group label {
+    font-size: 1em;
+  }
+
+  .form-group input[type="email"],
+  .form-group input[type="password"],
+  .form-group input[type="text"] {
+    padding: 12px;
+    font-size: 1em;
+  }
+
+  .btn.primary {
+    padding: 14px;
+    font-size: 1.1em;
+  }
+}

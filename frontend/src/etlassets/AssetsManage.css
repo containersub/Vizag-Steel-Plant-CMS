@@ -1,0 +1,62 @@
+.action-button{
+  background-color: white;
+  color: red;
+  border: 1px solid red;
+  border-radius: 4px;
+  -webkit-border-radius: 4px;
+  -moz-border-radius: 4px;
+  -ms-border-radius: 4px;
+  -o-border-radius: 4px;
+  width: 30px;
+  height: 35px;
+  place-content: center;
+  text-align: center;
+  margin-right: 2px;
+}
+.edit-button{
+  display: grid;
+  place-content: center;
+  border: #435BB2 solid 2px;
+  color: #435BB2;
+}
+.edit-button:hover{
+  background-color: #435BB2;
+  color: white;
+  border: white solid 2px;
+}
+.delete-button{
+ display: grid;
+  border: #FA2C3D solid 2px;
+  color: #FA2C3D;
+  place-content: center; 
+}
+.delete-button:hover{
+  background-color: #FA2C3D;
+  color: white;
+  border: white solid 2px;
+}
+.acbu{
+  display: flex;
+}
+.status-badge-am{
+  color: rgb(77, 77, 77);
+}
+.close-btn{
+  padding: 7px 10px;
+   position: relative;
+    left:1250px;
+    top:-70px;
+    display: grid;
+    place-content: center;
+    background-color: #FA2C3D;
+    color: white;
+    border: none;
+    font-size: 20px;
+    font-weight: 300;
+    border-radius: 5px;
+}
+.close-btn:hover{
+  color: white;
+  border: #FA2C3D solid 1.5px;
+  box-shadow: #FA2C3D 0px 4px 12px;
+}

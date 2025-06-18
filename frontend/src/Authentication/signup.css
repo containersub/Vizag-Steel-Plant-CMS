@@ -1,0 +1,197 @@
+/* Import Google Font - Inter for consistency */
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap");
+
+body {
+  margin: 0;
+  font-family: "Inter", sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* Main container for the form */
+.min-h-screen {
+  min-height: 100vh;
+  width: 100%;
+  background: linear-gradient(
+    to bottom,
+    #87ceeb,
+    #ffffff
+  ); /* Equivalent to min-h-screen */
+}
+
+.flex {
+  display: flex;
+}
+
+.items-center {
+  align-items: center;
+}
+
+.justify-center {
+  justify-content: center;
+}
+
+.bg-gray-100 {
+  background-color: #f3f4f6; /* Tailwind's gray-100 */
+}
+
+.p-4 {
+  padding: 1rem; /* Tailwind's p-4 */
+}
+
+/* Form container */
+.bg-white {
+  background-color: #ffffff;
+  width:auto;
+}
+
+.p-8 {
+  padding: 2rem; /* Tailwind's p-8 */
+}
+
+.rounded-lg {
+  border-radius: 0.5rem; /* Tailwind's rounded-lg */
+}
+
+.shadow-xl {
+  box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.25); /* Tailwind's shadow-xl */
+}
+
+/* Specific styling for form elements */
+h2 {
+  font-size: 1.875rem; /* Tailwind's text-3xl */
+  font-weight: 700; /* Tailwind's font-bold */
+  margin-bottom: 2rem; /* Tailwind's mb-8 */
+  color: #1f2937; /* Tailwind's gray-900 */
+  text-align: center;
+}
+.space-y-4{
+ 
+}
+
+.space-y-4 > *:not(:last-child) {
+  margin-bottom: 1rem; /* Tailwind's space-y-4 */
+}
+
+.relative {
+  position: relative;
+  /* Add flexbox to align icon and input */
+  display: flex;
+  align-items: center; /* Vertically center icon and input */
+}
+
+/* Styles for input fields */
+.relative > input{
+  width: 100%;
+  height: 20px;
+  padding-left: 2.5rem; /* Space for the icon */
+  padding-right: 1rem;
+  padding-top: 0.625rem; /* Slightly more vertical padding */
+  padding-bottom: 0.625rem; /* Slightly more vertical padding */
+  border: 1px solid #d1d5db; /* Tailwind's gray-300 */
+  border-radius: 0.375rem; /* Tailwind's rounded-md */
+  transition: all 0.2s ease-in-out;
+  font-size: 1rem;
+  line-height: 1.5; /* Ensure consistent line height */
+  color: #374151; 
+}
+.relative > select {
+  width: 100%;
+  height: 40px;
+  padding-left: 2.5rem; /* Space for the icon */
+  padding-right: 1rem;
+  padding-top: 0.625rem; /* Slightly more vertical padding */
+  padding-bottom: 0.625rem; /* Slightly more vertical padding */
+  border: 1px solid #d1d5db; /* Tailwind's gray-300 */
+  border-radius: 0.375rem; /* Tailwind's rounded-md */
+  transition: all 0.2s ease-in-out;
+  font-size: 1rem;
+  line-height: 1.5; /* Ensure consistent line height */
+  color: #374151; /* Tailwind's gray-700 */
+}
+
+.relative > input:focus,
+.relative > select:focus {
+  outline: none;
+  box-shadow: 0 0 0 2px #3b82f6; /* Tailwind's focus:ring-blue-500 */
+  border-color: transparent;
+}
+
+/* Icon positioning */
+.relative svg {
+  position: absolute;
+  left: 0.75rem; /* Adjust icon's horizontal position */
+  /* Remove top/transform for vertical centering if using flexbox on parent */
+  color: #9ca3af; /* Tailwind's gray-400 */
+  z-index: 10; /* Ensure icon is above input if needed */
+}
+
+/* Consistent styling for select (role and department) */
+select {
+  appearance: none; /* Remove default browser arrow */
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="%239ca3af" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-chevron-down"><path d="m6 9 6 6 6-6"/></svg>');
+  background-repeat: no-repeat;
+  background-position: right 0.75rem center;
+  background-size: 1.5em; /* Adjust size of the custom arrow */
+}
+
+
+/* Button styling */
+button[type="submit"] {
+  width: 100%;
+  border: none;
+  outline: none;
+  background-color: #2563eb; /* Tailwind's blue-600 */
+  color: #ffffff;
+  padding: 0.75rem 1rem; /* Tailwind's py-2 px-4 */
+  border-radius: 0.375rem; /* Tailwind's rounded-md */
+  font-weight: 600; /* Tailwind's font-semibold */
+  font-size: 1.125rem; /* Tailwind's text-lg */
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1),
+    0 2px 4px -2px rgba(0, 0, 0, 0.1); /* Tailwind's shadow-md */
+  transition: background-color 0.2s ease-in-out,
+    box-shadow 0.2s ease-in-out;
+}
+
+button[type="submit"]:hover {
+  background-color: #1d4ed8; /* Tailwind's hover:bg-blue-700 */
+}
+
+button[type="submit"]:disabled {
+  opacity: 0.7;
+  cursor: not-allowed;
+  background-color: #3b82f6; /* Keep consistent with primary color but dulled */
+}
+
+/* Link styling */
+.text-center.mt-4 a {
+  color: #2563eb; /* Tailwind's text-blue-600 */
+  font-size: 0.875rem; /* Tailwind's text-sm */
+}
+
+.text-center.mt-4 a:hover {
+  text-decoration: underline;
+}
+
+/* Message styling */
+.message {
+  padding: 0.75rem;
+  margin-top: 1rem;
+  border-radius: 0.375rem;
+  font-size: 0.875rem;
+  text-align: center;
+}
+
+.message.success {
+  background-color: #d1fae5; /* Green-100 */
+  color: #065f46; /* Green-800 */
+  border: 1px solid #34d399; /* Green-400 */
+}
+
+.message.error {
+  background-color: #fee2e2; /* Red-100 */
+  color: #991b1b; /* Red-800 */
+  border: 1px solid #f87171; /* Red-400 */
+}

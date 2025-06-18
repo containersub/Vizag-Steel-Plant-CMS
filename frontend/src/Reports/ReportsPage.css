@@ -1,0 +1,409 @@
+.reports-page-container {
+  font-family: "Inter", sans-serif; /* Using Inter as per general instructions */
+  padding: 20px;
+  background-color: #f4f7f6;
+  color: #333;
+  max-width: 1200px;
+  margin: 20px auto;
+  border-radius: 12px;
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.15);
+  min-height: 80vh;
+  display: flex;
+  flex-direction: column;
+}
+
+.reports-page-title {
+  text-align: center;
+  color: #2c3e50;
+  margin-bottom: 30px;
+  font-size: 2.5rem;
+  font-weight: 700;
+  letter-spacing: -0.03em;
+}
+
+/* Tabs Styling */
+.tabs-container {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 30px;
+  background-color: #e0e6ea;
+  border-radius: 8px;
+  padding: 8px;
+  box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.1);
+}
+
+.tab-button {
+  flex: 1;
+  padding: 12px 20px;
+  border: none;
+  background-color: transparent;
+  color: #555;
+  font-size: 1.1rem;
+  font-weight: 600;
+  cursor: pointer;
+  border-radius: 6px;
+  transition: all 0.3s ease;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+}
+
+.tab-button:hover {
+  background-color: #cdd4d8;
+  color: #333;
+}
+
+.tab-button.active {
+  background-color: #007bff;
+  color: white;
+  box-shadow: 0 4px 8px rgba(0, 123, 255, 0.3);
+  transform: translateY(-2px);
+}
+
+/* Filters Section */
+.filters-section {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: center;
+  gap: 20px;
+  padding: 20px;
+  background-color: #ffffff;
+  border-radius: 10px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+  margin-bottom: 30px;
+}
+
+.filter-group {
+  width: 350px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.filter-label {
+  font-weight: 600;
+  color: #444;
+  display: flex;
+  align-items: center;
+  gap: 5px;
+}
+
+.filter-select,
+.filter-input {
+  padding: 10px 12px;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  font-size: 1rem;
+  color: #333;
+  transition: border-color 0.3s ease, box-shadow 0.3s ease;
+  min-width: 150px;
+}
+.filter-select-department{
+  padding: 10px 12px;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  font-size: 1rem;
+  color: #333;
+  transition: border-color 0.3s ease, box-shadow 0.3s ease;
+  min-width: 150px;
+}
+.filter-select-department:focus,
+.filter-select:focus,
+.filter-input:focus {
+  border-color: #007bff;
+  box-shadow: 0 0 0 3px rgba(0, 123, 255, 0.25);
+  outline: none;
+}
+
+.export-buttons {
+  display: flex;
+  gap: 0px;
+}
+.export-button-csv{
+  position: relative;
+  left:-800px;
+}
+.export-button-csv,
+.export-button {
+  padding: 10px 18px;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  font-size: 1rem;
+  font-weight: 600;
+  color: white;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.export-button {
+  background-color: #dc3545; /* Red for PDF */
+}
+
+.export-button:hover {
+  background-color: #c82333;
+  transform: translateY(-1px);
+}
+
+.export-button-csv {
+  background-color: #28a745; /* Green for CSV */
+}
+
+.export-button-csv:hover {
+  background-color: #218838;
+  transform: translateY(-1px);
+}
+
+/* Report Content Section */
+.report-content {
+  flex-grow: 1; /* Allows content to take available space */
+  background-color: #ffffff;
+  padding: 25px;
+  border-radius: 10px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+  overflow-x: auto; /* For table responsiveness */
+}
+
+.report-section-title {
+  font-size: 1.8rem;
+  color: #2c3e50;
+  margin-bottom: 20px;
+  text-align: center;
+  font-weight: 600;
+}
+
+.report-table-container {
+  margin-top: 20px;
+}
+
+.report-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 15px;
+  min-width: 700px; /* Ensure table doesn't get too small */
+}
+
+.report-table th,
+.report-table td {
+  border: 1px solid #e9ecef;
+  padding: 12px 15px;
+  text-align: left;
+}
+
+.report-table th {
+  background-color: #f8f9fa;
+  color: #495057;
+  font-weight: 700;
+  text-transform: uppercase;
+  font-size: 0.9rem;
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+  position: relative; /* For sort icons */
+}
+
+.report-table th:hover {
+  background-color: #e2e6ea;
+}
+
+.report-table th svg {
+  position: absolute;
+  right: 10px;
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+.report-table tbody tr:nth-child(even) {
+  background-color: #fcfdff;
+}
+
+.report-table tbody tr:hover {
+  background-color: #eaf5ff;
+  cursor: pointer;
+}
+
+.status-badge {
+  padding: 6px 12px;
+  border-radius: 20px;
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: white;
+  display: inline-block;
+  min-width: 90px;
+  text-align: center;
+}
+
+/* Specific status colors */
+.status-open {
+  background-color: #007bff;
+} /* Blue */
+.status-in-progress {
+  background-color: #ffc107;
+  color: #333;
+} /* Yellow */
+.status-closed {
+  background-color: #28a745;
+} /* Green */
+.status-resolved {
+  background-color: #17a2b8;
+} /* Teal */
+.status-pending {
+  background-color: #495057;
+} /* Gray */
+.status-verified {
+  background-color: #ffc107;
+} /* Purple */
+.status-approved {
+  background-color: #16a325;
+} /* Green */
+.status-rejected {
+  background-color: #c82333;
+} /* Red */
+.status-bill_approved{
+  background-color: #0056b3;
+}
+
+.drill-down-button {
+  padding: 8px 12px;
+  background-color: #007bff;
+  color: white;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 0.9rem;
+  transition: background-color 0.3s ease;
+}
+
+.drill-down-button:hover {
+  background-color: #0056b3;
+}
+
+.no-results {
+  text-align: center;
+  padding: 30px;
+  font-size: 1.1rem;
+  color: #666;
+  font-style: italic;
+}
+
+/* Responsive Adjustments */
+@media (max-width: 768px) {
+  .reports-page-title {
+    font-size: 2rem;
+  }
+
+  .tabs-container {
+    flex-direction: column;
+    padding: 5px;
+  }
+
+  .tab-button {
+    padding: 10px 15px;
+    font-size: 1rem;
+  }
+
+  .filters-section {
+    flex-direction: column;
+    align-items: stretch;
+    gap: 15px;
+    padding: 15px;
+  }
+
+  .filter-group {
+    flex-direction: column;
+    align-items: flex-start;
+    width: 100%;
+  }
+
+  .filter-select,
+  .filter-input {
+    width: 100%;
+    min-width: unset;
+  }
+
+  .export-buttons {
+    flex-direction: column;
+    width: 100%;
+    gap: 10px;
+  }
+
+  .export-button {
+    width: 100%;
+    justify-content: center;
+  }
+
+  .report-table-container {
+    overflow-x: auto; /* Ensure horizontal scroll for tables on small screens */
+  }
+
+  .report-table {
+    min-width: 600px; /* Maintain a minimum width for the table */
+  }
+}
+/* ReportsPage.css additions */
+
+.detail-card-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.6);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000; /* Ensure it's on top of other content */
+}
+
+.detail-card {
+  background-color: #ffffff;
+  padding: 30px;
+  border-radius: 8px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
+  width: 90%;
+  max-width: 600px;
+  position: relative;
+  max-height: 80vh; /* Limit height to prevent overflow */
+  overflow-y: auto; /* Enable scrolling for long content */
+}
+
+.detail-card-close {
+  position: absolute;
+  top: 15px;
+  right: 15px;
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 5px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: background-color 0.2s ease;
+}
+
+.detail-card-close:hover {
+  background-color: #f0f0f0;
+}
+
+.detail-card h3 {
+  margin-top: 0;
+  margin-bottom: 20px;
+  color: #333;
+  font-size: 1.5em;
+  border-bottom: 1px solid #eee;
+  padding-bottom: 10px;
+}
+
+.detail-card-content p {
+  margin-bottom: 10px;
+  line-height: 1.6;
+  color: #555;
+}
+
+.detail-card-content strong {
+  color: #333;
+}
